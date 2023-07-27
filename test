@@ -1,18 +1,18 @@
-guiAlex = Instance.new("ScreenGui")
-frmMain = Instance.new("Frame")
-frmMainUICorner = Instance.new("UICorner")
-btnOpen = Instance.new("TextButton")
-btnOpenUICorner = Instance.new("UICorner")
-scrFrame = Instance.new("ScrollingFrame")
-btnBloxburg = Instance.new("TextButton")
-btnPlaneCrazy = Instance.new("TextButton")
-btnDoors = Instance.new("TextButton")
-txtVersion = Instance.new("TextLabel")
-txtTitle = Instance.new("TextLabel")
-txtAuthor = Instance.new("TextLabel")
-btnClose = Instance.new("TextButton")
-TweenService = game:GetService("TweenService")
-UserInputService = game:GetService("UserInputService")
+local guiAlex = Instance.new("ScreenGui")
+local frmMain = Instance.new("Frame")
+local frmMainUICorner = Instance.new("UICorner")
+local btnOpen = Instance.new("TextButton")
+local btnOpenUICorner = Instance.new("UICorner")
+local scrFrame = Instance.new("ScrollingFrame")
+local btnBloxburg = Instance.new("TextButton")
+local btnPlaneCrazy = Instance.new("TextButton")
+local btnDoors = Instance.new("TextButton")
+local txtVersion = Instance.new("TextLabel")
+local txtTitle = Instance.new("TextLabel")
+local txtAuthor = Instance.new("TextLabel")
+local btnClose = Instance.new("TextButton")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
 
 guiAlex.Name = "guiAlex"
 guiAlex.Parent = game.StarterGui
@@ -177,46 +177,6 @@ btnClose.TextStrokeColor3 = Color3.new(0, 0, 0)
 btnClose.TextWrapped = true
 btnClose.TextStrokeTransparency = 1
 btnClose.Font = Enum.Font.SourceSans
-
-coroutine.wrap(frmMain)()
-local function move2() -- Main.Drag 
-	local script = Instance.new('LocalScript', frmMain)
-
-	local UIS = game:GetService('UserInputService')
-	local frame = script.Parent
-	local dragToggle = nil
-	local dragSpeed = 0.25
-	local dragStart = nil
-	local startPos = nil
-
-	local function updateInput(input)
-		local delta = input.Position - dragStart
-		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-	end
-
-	frame.InputBegan:Connect(function(input)
-		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-			dragToggle = true
-			dragStart = input.Position
-			startPos = frame.Position
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragToggle = false
-				end
-			end)
-		end
-	end)
-
-	UIS.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			if dragToggle then
-				updateInput(input)
-			end
-		end
-	end)
-end
 
 btnDoors.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
