@@ -32,6 +32,7 @@ btnOpen.TextStrokeColor3 = Color3.new(0, 0, 0)
 btnOpen.TextWrapped = true
 btnOpen.TextStrokeTransparency = 1
 btnOpen.Font = Enum.Font.SourceSans
+btnOpen.Visible = true
 
 btnOpenUICorner.Name = "btnOpenUICorner"
 btnOpenUICorner.Parent = btnOpen
@@ -180,4 +181,8 @@ btnClose.Font = Enum.Font.SourceSans
 
 btnDoors.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+btnOpen.MouseButton1Down:connect(function ()
+	frmMain.Visible = not frmMain.Visible
 end)
