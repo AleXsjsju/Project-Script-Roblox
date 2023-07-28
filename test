@@ -1,3 +1,4 @@
+--questo codice se avviato da exploit non funziona
 local guiAlex = Instance.new("ScreenGui")
 local frmMain = Instance.new("Frame")
 local frmMainUICorner = Instance.new("UICorner")
@@ -32,7 +33,6 @@ btnOpen.TextStrokeColor3 = Color3.new(0, 0, 0)
 btnOpen.TextWrapped = true
 btnOpen.TextStrokeTransparency = 1
 btnOpen.Font = Enum.Font.SourceSans
-btnOpen.Visible = true
 
 btnOpenUICorner.Name = "btnOpenUICorner"
 btnOpenUICorner.Parent = btnOpen
@@ -118,7 +118,9 @@ btnDoors.TextStrokeColor3 = Color3.new(0, 0, 0)
 btnDoors.TextWrapped = true
 btnDoors.TextStrokeTransparency = 1
 btnDoors.Font = Enum.Font.SourceSans
-
+btnDoors.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
 
 -- Testo della versione
 txtVersion.Name = "txtVersion"
@@ -178,11 +180,3 @@ btnClose.TextStrokeColor3 = Color3.new(0, 0, 0)
 btnClose.TextWrapped = true
 btnClose.TextStrokeTransparency = 1
 btnClose.Font = Enum.Font.SourceSans
-
-btnDoors.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)
-
-btnOpen.MouseButton1Down:connect(function ()
-	frmMain.Visible = not frmMain.Visible
-end)
