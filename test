@@ -17,6 +17,10 @@ local UserInputService = game:GetService("UserInputService")
 
 guiAlex.Name = "guiAlex"
 guiAlex.Parent = game.StarterGui
+game.StarterGui = btnOpen
+guiAlex.Enabled = CFrame
+frmMain.Visible = true
+btnOpen.Visible = true
 
 -- Bottone Open
 btnOpen.Name = "btnOpen"
