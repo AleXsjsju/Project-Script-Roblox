@@ -1,4 +1,4 @@
---questo codice se avviato da exploit non funziona
+print("hello player, by AleXsjsju")
 local guiAlex = Instance.new("ScreenGui")
 local frmMain = Instance.new("Frame")
 local frmMainUICorner = Instance.new("UICorner")
