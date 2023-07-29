@@ -9,7 +9,7 @@
 --OutPutTamplate/dragger e resizer (137/154): Servono all'allineamento del contenuto di OutPut (ho provato a modificarlo e toglierlo ma facendo ciò sballo il moveframe e sballo anche la chiusura del pannello e il destroy del pannello)
 --se ti domandi perchè il nostro non andava da exploit allora è perche non avevi indicato dove si trovava la screengui su roblox studio da errore il coregui perchè non lo riconosce
 --leggi nota 198
-print(Thanks for use)
+print("Thanks for use")
 --inizio
 repeat task.wait() until game.Players and game.Players.LocalPlayer
 --head
@@ -192,27 +192,28 @@ btnDoors.TextWrapped = true
 btnDoors.TextStrokeTransparency = 1
 btnDoors.Font = Enum.Font.SourceSans
 btnDoors.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet("https://rawscripts.net/raw/DOORS-awesome-script-11450"))()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/DOORS-awesome-script-11450"))()
 end)
 
 -- Bottone Arsenal (sembra unito col pulsante doors)
-btnDoors.Name = "btnArsenal"
-btnDoors.Parent = Output
-btnDoors.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-btnDoors.BorderColor3 = Color3.new(1, 0, 0)
-btnDoors.BackgroundTransparency = 0
-btnDoors.BorderSizePixel = 1
-btnDoors.Size = UDim2.new(0, 143, 0, 44)
-btnDoors.Text = "doors"
-btnDoors.TextColor3 = Color3.new(255, 255, 255)
-btnDoors.TextScaled = false
-btnDoors.TextSize = 25
-btnDoors.TextStrokeColor3 = Color3.new(0, 0, 0)
-btnDoors.TextWrapped = true
-btnDoors.TextStrokeTransparency = 1
-btnDoors.Font = Enum.Font.SourceSans
-btnDoors.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Main"))()
+btnArsenal.Name = "btnArsenal"
+btnArsenal.Parent = Output
+btnArsenal.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+btnArsenal.BorderColor3 = Color3.new(1, 0, 0)
+btnArsenal.BackgroundTransparency = 0
+btnArsenal.BorderSizePixel = 1
+btnArsenal.Size = UDim2.new(0, 143, 0, 44)
+btnArsenal.Position = UDim2.new(0, 0, 0, 54)
+btnArsenal.Text = "arsenal"
+btnArsenal.TextColor3 = Color3.new(255, 255, 255)
+btnArsenal.TextScaled = false
+btnArsenal.TextSize = 25
+btnArsenal.TextStrokeColor3 = Color3.new(0, 0, 0)
+btnArsenal.TextWrapped = true
+btnArsenal.TextStrokeTransparency = 1
+btnArsenal.Font = Enum.Font.SourceSans
+btnArsenal.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Main"))()
 end)
 
 frmsponso.Name = "framesponsor"
@@ -262,7 +263,7 @@ local draggerFunctions = {}; do
         end
         dragger.MouseButton1Down:Connect(function()
             if not startDrag then
-                startSize = obj.AbsoluteSize			
+                startSize = obj.AbsoluteSize            
                 startDrag = Vector2.new(mouse.X, mouse.Y)
                 dragger.BackgroundTransparency = 1
                 dragger.Size = UDim2.fromOffset(gui.AbsoluteSize.X, gui.AbsoluteSize.Y)
@@ -270,9 +271,9 @@ local draggerFunctions = {}; do
                 duic.Parent = nil
                 dragger.Parent = gui
             end
-        end)	
+        end)    
         dragger.MouseMoved:Connect(function()
-            if startDrag then		
+            if startDrag then       
                 local m = Vector2.new(mouse.X, mouse.Y)
                 local mouseMoved = Vector2.new(m.X - startDrag.X, m.Y - startDrag.Y)
                 
@@ -285,21 +286,21 @@ local draggerFunctions = {}; do
             end
         end)
         dragger.MouseEnter:Connect(function()
-            finishResize(DRAGGER_TRANSPARENCY)				
+            finishResize(DRAGGER_TRANSPARENCY)              
         end)
         dragger.MouseLeave:Connect(function()
             finishResize(1)
-        end)		
+        end)        
         dragger.MouseButton1Up:Connect(function()
             finishResize(DRAGGER_TRANSPARENCY)
-        end)	
+        end)    
     end
 
     function draggerFunctions.makeDraggable(obj)
         local dragInput, dragStart
         local startPos = obj.Position 
-        local dragger = obj	
-        local function updateInput(input)		
+        local dragger = obj 
+        local function updateInput(input)       
             local offset = input.Position - dragStart
             local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + offset.X, startPos.Y.Scale, startPos.Y.Offset + offset.Y)
             game:GetService("TweenService"):Create(obj, TweenInfo.new(0.25), {Position = Position}):Play()
@@ -365,7 +366,7 @@ do
     end
 
     clearButton.Activated:Connect(function()
-        cleartext()	
+        cleartext() 
     end)
 
     local closed = false
