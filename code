@@ -45,6 +45,9 @@ local OptionsLayout = Instance.new("UIListLayout")
 local Enabled = Instance.new("Frame")
 local btnDoors = Instance.new("TextButton")
 local btnArsenal = Instance.new("TextButton")
+local btn3 = Instance.new("TextButton")
+local btn4 = Instance.new("TextButton")
+--local btn5 = Instance.new("TextButton")
 local frmsponso = Instance.new("TextLabel")
 
 do
@@ -215,6 +218,66 @@ btnArsenal.Font = Enum.Font.SourceSans
 btnArsenal.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Main"))()
 end)
+
+btn3.Name = "btn3"
+btn3.Parent = Output
+btn3.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+btn3.BorderColor3 = Color3.new(1, 0, 0)
+btn3.BackgroundTransparency = 0
+btn3.BorderSizePixel = 1
+btn3.Size = UDim2.new(0, 143, 0, 44)
+btn3.Position = UDim2.new(0, 0, 0, 108)
+btn3.Text = "Sora"
+btn3.TextColor3 = Color3.new(255, 255, 255)
+btn3.TextScaled = false
+btn3.TextSize = 25
+btn3.TextStrokeColor3 = Color3.new(0, 0, 0)
+btn3.TextWrapped = true
+btn3.TextStrokeTransparency = 1
+btn3.Font = Enum.Font.SourceSans
+btn3.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("Inserire url script"))()
+end)
+
+btn4.Name = "btn4"
+btn4.Parent = Output
+btn4.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+btn4.BorderColor3 = Color3.new(1, 0, 0)
+btn4.BackgroundTransparency = 0
+btn4.BorderSizePixel = 1
+btn4.Size = UDim2.new(0, 143, 0, 44)
+btn4.Position = UDim2.new(0, 0, 0, 162)
+btn4.Text = "Paperino"
+btn4.TextColor3 = Color3.new(255, 255, 255)
+btn4.TextScaled = false
+btn4.TextSize = 25
+btn4.TextStrokeColor3 = Color3.new(0, 0, 0)
+btn4.TextWrapped = true
+btn4.TextStrokeTransparency = 1
+btn4.Font = Enum.Font.SourceSans
+btn4.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("Inserire url script"))()
+end)
+
+--btn5.Name = "btn5"
+--btn5.Parent = Output
+--btn5.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+--btn5.BorderColor3 = Color3.new(1, 0, 0)
+--btn5.BackgroundTransparency = 0
+--btn5.BorderSizePixel = 1
+--btn5.Size = UDim2.new(0, 143, 0, 44)
+--btn5.Position = UDim2.new(0, 0, 0, 216)
+--btn5.Text = "Pippo"
+--btn5.TextColor3 = Color3.new(255, 255, 255)
+--btn5.TextScaled = false
+--btn5.TextSize = 25
+--btn5.TextStrokeColor3 = Color3.new(0, 0, 0)
+--btn5.TextWrapped = true
+--btn5.TextStrokeTransparency = 1
+--btn5.Font = Enum.Font.SourceSans
+--btn5.MouseButton1Click:Connect(function()
+--    loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Main"))()
+--end)
 
 frmsponso.Name = "framesponsor"
 frmsponso.Parent = TopBar
