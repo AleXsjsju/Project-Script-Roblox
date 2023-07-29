@@ -7,8 +7,7 @@
 --TabLabel (90/101): si trova in topbar ed è il titolo "by AleXsjsju etc" (il "visit my channel" si trova in un label apparte)
 --OutPut (118/128): e la parte di colore diverso che sta dentro Backgound e al suo interno ci sono i tasti
 --OutPutTamplate/dragger e resizer (137/154): Servono all'allineamento del contenuto di OutPut (ho provato a modificarlo e toglierlo ma facendo ciò sballo il moveframe e sballo anche la chiusura del pannello e il destroy del pannello)
---se ti domandi perchè il nostro non andava da exploit allora è perche non avevi indicato dove si trovava la screengui su roblox studio da errore il coregui perchè non lo riconosce
---leggi nota 198
+
 print("Thanks for use")
 --inizio
 repeat task.wait() until game.Players and game.Players.LocalPlayer
@@ -46,6 +45,9 @@ local Enabled = Instance.new("Frame")
 local btnDoors = Instance.new("TextButton")
 local btnArsenal = Instance.new("TextButton")
 local frmsponso = Instance.new("TextLabel")
+local separator2 = Instance.new("Frame")
+local textdesclaimer = Instance.new("TextLabel")
+local text2desclaimer2 = Instance.new("TextLabel")
 
 do
 
@@ -77,6 +79,14 @@ Seperator.BorderSizePixel = 0
 Seperator.Position = UDim2.new(0, 0, 0, 25)
 Seperator.Size = UDim2.new(1, 0, 0, 1)
 
+separator2.Name = "Seperator2"
+separator2.Parent = Background
+separator2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+separator2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+separator2.BorderSizePixel = 0
+separator2.Position = UDim2.new(0, 410, 0, 0)
+separator2.Size = UDim2.new(0, 1, 1, 0)
+
 Toggle.Name = "Toggle"
 Toggle.Parent = TopBar
 Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -103,6 +113,33 @@ TabLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TabLabel.TextSize = 14.000
 TabLabel.TextXAlignment = Enum.TextXAlignment.Left
 
+textdesclaimer.Name = "Desclaimer"
+textdesclaimer.Parent = Background
+textdesclaimer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textdesclaimer.BackgroundTransparency = 1.000
+textdesclaimer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+textdesclaimer.BorderSizePixel = 0
+textdesclaimer.Size = UDim2.new(1, 0, 1, 0)
+textdesclaimer.Font = Enum.Font.ArialBold
+textdesclaimer.Text = "Desclaimer"
+textdesclaimer.TextColor3 = Color3.fromRGB(255, 0, 0)
+textdesclaimer.TextSize = 25
+textdesclaimer.Position = UDim2.new(0, 207, 0, -110)
+
+text2desclaimer2.Name = "Desclaimer2"
+text2desclaimer2.Parent = Background
+text2desclaimer2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+text2desclaimer2.BackgroundTransparency = 1.000
+text2desclaimer2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+text2desclaimer2.BorderSizePixel = 0
+text2desclaimer2.Size = UDim2.new(1, 0, 1, 0)
+text2desclaimer2.Font = Enum.Font.ArialBold
+text2desclaimer2.Text = "The scripts aren't my \nown creation so I don't \ntake responsibility for \nwhat happens."
+text2desclaimer2.TextColor3 = Color3.fromRGB(255, 255, 255)
+text2desclaimer2.TextSize = 16
+text2desclaimer2.Position = UDim2.new(0, 210, 0, -50)
+text2desclaimer2.RichText = true 
+
 TabPadding.Name = "TabPadding"
 TabPadding.Parent = TabLabel
 TabPadding.PaddingLeft = UDim.new(0, 4)
@@ -124,7 +161,7 @@ Output.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Output.BorderSizePixel = 0
 Output.Position = UDim2.new(0, 8, 0, 20)
 Output.Selectable = false
-Output.Size = UDim2.new(1, -16, 1, -30)
+Output.Size = UDim2.new(1, -200, 1, -30)
 Output.CanvasSize = UDim2.new(0, 0, 0, 0)
 Output.ScrollBarThickness = 4
 Output.AutomaticCanvasSize = Enum.AutomaticSize.Y
@@ -182,8 +219,8 @@ btnDoors.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 btnDoors.BorderColor3 = Color3.new(1, 0, 0)
 btnDoors.BackgroundTransparency = 0
 btnDoors.BorderSizePixel = 1
-btnDoors.Size = UDim2.new(0, 143, 0, 44)
-btnDoors.Text = "doors"
+btnDoors.Size = UDim2.new(0, 100, 0, 40)
+btnDoors.Text = "Doors"
 btnDoors.TextColor3 = Color3.new(255, 255, 255)
 btnDoors.TextScaled = false
 btnDoors.TextSize = 25
@@ -195,16 +232,16 @@ btnDoors.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/DOORS-awesome-script-11450"))()
 end)
 
--- Bottone Arsenal (sembra unito col pulsante doors)
+--Bottone Arsenal
 btnArsenal.Name = "btnArsenal"
 btnArsenal.Parent = Output
 btnArsenal.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 btnArsenal.BorderColor3 = Color3.new(1, 0, 0)
 btnArsenal.BackgroundTransparency = 0
 btnArsenal.BorderSizePixel = 1
-btnArsenal.Size = UDim2.new(0, 143, 0, 44)
-btnArsenal.Position = UDim2.new(0, 0, 0, 54)
-btnArsenal.Text = "arsenal"
+btnArsenal.Size = UDim2.new(0, 100, 0, 40)
+btnArsenal.Position = UDim2.new(0, 0, 0, 55)
+btnArsenal.Text = "Arsenal"
 btnArsenal.TextColor3 = Color3.new(255, 255, 255)
 btnArsenal.TextScaled = false
 btnArsenal.TextSize = 25
