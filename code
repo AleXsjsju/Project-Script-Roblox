@@ -1,0 +1,557 @@
+--NOTE 
+--Informazioni:
+--Background (49/55): e lo sfondo
+--TopBar (58/64): e la striscia che rimane quando minimizzi il pannello
+--Separator (67/73): e la piccola striscietta rossa che divide il topbar e il background
+--toggle (76/84): bottone che una volta cliccato minimizza il pannello
+--TabLabel (90/101): si trova in topbar ed è il titolo "by AleXsjsju etc" (il "visit my channel" si trova in un label apparte)
+--OutPut (118/128): e la parte di colore diverso che sta dentro Backgound e al suo interno ci sono i tasti
+--OutPutTamplate/dragger e resizer (137/154): Servono all'allineamento del contenuto di OutPut (ho provato a modificarlo e toglierlo ma facendo ciò sballo il moveframe e sballo anche la chiusura del pannello e il destroy del pannello)
+--se ti domandi perchè il nostro non andava da exploit allora è perche non avevi indicato dove si trovava la screengui su roblox studio da errore il coregui perchè non lo riconosce
+--leggi nota 198
+print(Thanks for use)
+--inizio
+repeat task.wait() until game.Players and game.Players.LocalPlayer
+--head
+local uis = game:GetService("UserInputService")
+local tweenService = game:GetService("TweenService")
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local ScreenGui = Instance.new("ScreenGui")
+--body
+local Background = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local Seperator = Instance.new("Frame")
+local Toggle = Instance.new("ImageButton")
+local Tab = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TabCover = Instance.new("Frame")
+local TabLabel = Instance.new("TextLabel")
+local TabPadding = Instance.new("UIPadding")
+local Close = Instance.new("ImageButton")
+local ClearButton = Instance.new("TextButton")
+local Output = Instance.new("ScrollingFrame")
+local OutputPadding = Instance.new("UIPadding")
+local OutputTemplate = Instance.new("TextLabel")
+local resizer = Instance.new("Frame")
+local dragger = Instance.new("ImageButton")
+local UICorner_2 = Instance.new("UICorner")
+local Options = Instance.new("Frame")
+local OptionsToggle = Instance.new("ImageButton")
+local UIPadding = Instance.new("UIPadding")
+local OptionsFrame = Instance.new("ScrollingFrame")
+local UIPadding_2 = Instance.new("UIPadding")
+local OptionsSpacing = Instance.new("UIPadding")
+local OptionsLayout = Instance.new("UIListLayout")
+local Enabled = Instance.new("Frame")
+local btnDoors = Instance.new("TextButton")
+local btnArsenal = Instance.new("TextButton")
+local frmsponso = Instance.new("TextLabel")
+
+do
+
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+Background.Name = "Background"
+Background.Parent = ScreenGui
+Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Background.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Background.BorderSizePixel = 1
+Background.Position = UDim2.new(0.3, 0, 0.3, 0)
+Background.Size = UDim2.new(0, 601, 0, 312)
+
+TopBar.Name = "TopBar"
+TopBar.Parent = Background
+TopBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TopBar.BorderColor3 = Color3.fromRGB(60, 59, 60)
+TopBar.BorderSizePixel = 0
+TopBar.Size = UDim2.new(1, 0, 0, 25)
+TopBar.ZIndex = 2
+
+Seperator.Name = "Seperator"
+Seperator.Parent = TopBar
+Seperator.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Seperator.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Seperator.BorderSizePixel = 0
+Seperator.Position = UDim2.new(0, 0, 0, 25)
+Seperator.Size = UDim2.new(1, 0, 0, 1)
+
+Toggle.Name = "Toggle"
+Toggle.Parent = TopBar
+Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.BackgroundTransparency = 1.000
+Toggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.BorderSizePixel = 0
+Toggle.Position = UDim2.new(0, 3, 0, 3)
+Toggle.Size = UDim2.new(0, 19, 0, 19)
+Toggle.Image = "rbxassetid://10709767827"
+
+UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.Parent = Tab
+
+TabLabel.Name = "TabLabel"
+TabLabel.Parent = TopBar
+TabLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TabLabel.BackgroundTransparency = 1.000
+TabLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TabLabel.BorderSizePixel = 0
+TabLabel.Size = UDim2.new(1, 0, 1, 0)
+TabLabel.Font = Enum.Font.ArialBold
+TabLabel.Text = ".       .by AleXsjsju  V. 1.82"
+TabLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TabLabel.TextSize = 14.000
+TabLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+TabPadding.Name = "TabPadding"
+TabPadding.Parent = TabLabel
+TabPadding.PaddingLeft = UDim.new(0, 4)
+
+Close.Name = "Close"
+Close.Parent = TopBar
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(1, -22, 0, 3)
+Close.Size = UDim2.new(0, 19, 0, 19)
+Close.Image = "rbxassetid://10747384394"
+
+Output.Name = "Output"
+Output.Parent = Background
+Output.BackgroundColor3 = Color3.fromRGB(25, 13, 15)
+Output.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Output.BorderSizePixel = 0
+Output.Position = UDim2.new(0, 8, 0, 20)
+Output.Selectable = false
+Output.Size = UDim2.new(1, -16, 1, -30)
+Output.CanvasSize = UDim2.new(0, 0, 0, 0)
+Output.ScrollBarThickness = 4
+Output.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+OutputPadding.Name = "OutputPadding"
+OutputPadding.Parent = Output
+OutputPadding.PaddingLeft = UDim.new(0, 6)
+OutputPadding.PaddingTop = UDim.new(0, 25)
+
+
+OutputTemplate.Name = "OutputTemplate"
+OutputTemplate.Parent = Output
+OutputTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OutputTemplate.BackgroundTransparency = 1.000
+OutputTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OutputTemplate.BorderSizePixel = 0
+OutputTemplate.Position = UDim2.new(0.00341296918, 0, 0.00347222225, 0)
+OutputTemplate.Size = UDim2.new(1, 0, 0, 0)
+OutputTemplate.Visible = false
+OutputTemplate.Font = Enum.Font.Arial
+OutputTemplate.Text = "<font color=\"#ff4440\">123 </font>"
+OutputTemplate.TextColor3 = Color3.fromRGB(255, 255, 255)
+OutputTemplate.TextSize = 15.000
+OutputTemplate.TextWrapped = true
+OutputTemplate.TextXAlignment = Enum.TextXAlignment.Left
+OutputTemplate.TextYAlignment = Enum.TextYAlignment.Top
+OutputTemplate.RichText = true
+OutputTemplate.AutomaticSize = Enum.AutomaticSize.Y
+
+resizer.Name = "resizer"
+resizer.Parent = ScreenGui
+resizer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+resizer.BackgroundTransparency = 1.000
+resizer.ClipsDescendants = true
+resizer.Position = UDim2.new(1, -30, 1, -30)
+resizer.Size = UDim2.new(0, 30, 0, 30)
+resizer.SizeConstraint = Enum.SizeConstraint.RelativeXX
+
+dragger.Name = "dragger"
+dragger.Parent = resizer
+dragger.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
+dragger.BackgroundTransparency = 1.000
+dragger.BorderSizePixel = 0
+dragger.Size = UDim2.new(2, 0, 2, 0)
+dragger.ZIndex = 2
+dragger.ImageTransparency = 1.000
+
+UICorner_2.CornerRadius = UDim.new(0.5, 0)
+UICorner_2.Parent = dragger
+
+-- Bottone Doors
+btnDoors.Name = "btnDoors"
+btnDoors.Parent = Output
+btnDoors.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+btnDoors.BorderColor3 = Color3.new(1, 0, 0)
+btnDoors.BackgroundTransparency = 0
+btnDoors.BorderSizePixel = 1
+btnDoors.Size = UDim2.new(0, 143, 0, 44)
+btnDoors.Text = "doors"
+btnDoors.TextColor3 = Color3.new(255, 255, 255)
+btnDoors.TextScaled = false
+btnDoors.TextSize = 25
+btnDoors.TextStrokeColor3 = Color3.new(0, 0, 0)
+btnDoors.TextWrapped = true
+btnDoors.TextStrokeTransparency = 1
+btnDoors.Font = Enum.Font.SourceSans
+btnDoors.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://rawscripts.net/raw/DOORS-awesome-script-11450"))()
+end)
+
+-- Bottone Arsenal (sembra unito col pulsante doors)
+btnDoors.Name = "btnArsenal"
+btnDoors.Parent = Output
+btnDoors.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+btnDoors.BorderColor3 = Color3.new(1, 0, 0)
+btnDoors.BackgroundTransparency = 0
+btnDoors.BorderSizePixel = 1
+btnDoors.Size = UDim2.new(0, 143, 0, 44)
+btnDoors.Text = "doors"
+btnDoors.TextColor3 = Color3.new(255, 255, 255)
+btnDoors.TextScaled = false
+btnDoors.TextSize = 25
+btnDoors.TextStrokeColor3 = Color3.new(0, 0, 0)
+btnDoors.TextWrapped = true
+btnDoors.TextStrokeTransparency = 1
+btnDoors.Font = Enum.Font.SourceSans
+btnDoors.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Main"))()
+end)
+
+frmsponso.Name = "framesponsor"
+frmsponso.Parent = TopBar
+frmsponso.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+frmsponso.BackgroundTransparency = 1.000
+frmsponso.BorderColor3 = Color3.fromRGB(0, 0, 0)
+frmsponso.BorderSizePixel = 0
+frmsponso.Size = UDim2.new(1, 0, 1, 0)
+frmsponso.Font = Enum.Font.ArialBold
+frmsponso.Text = "Visit my Channel YouTube!^^"
+frmsponso.TextColor3 = Color3.fromRGB(255, 0, 0)
+frmsponso.TextSize = 15
+
+
+end
+
+--MOVEFRAME
+local draggerFunctions = {}; do
+    local DRAGGER_SIZE = 30
+    local DRAGGER_TRANSPARENCY = .5
+
+    local dragging = false
+
+    function draggerFunctions.makeResizable(obj:GuiObject, minSize)
+        
+        local resizer = ScreenGui.resizer:Clone()
+        local dragger = resizer.dragger
+        
+        resizer.Size = UDim2.fromOffset(DRAGGER_SIZE, DRAGGER_SIZE)
+        resizer.Position = UDim2.new(1, -DRAGGER_SIZE, 1, -DRAGGER_SIZE)
+        
+        local duic = dragger.UICorner
+        minSize = minSize or Vector2.new(160, 90)
+        
+        local startDrag, startSize
+        local gui = obj:FindFirstAncestorWhichIsA("ScreenGui")
+        resizer.Parent = obj
+
+        local function finishResize(tr)
+            dragger.Position = UDim2.new(0,0,0,0)
+            dragger.Size = UDim2.new(2,0,2,0)
+            dragger.Parent = resizer
+            dragger.BackgroundTransparency = tr
+            duic.Parent = dragger
+            startDrag = nil
+        end
+        dragger.MouseButton1Down:Connect(function()
+            if not startDrag then
+                startSize = obj.AbsoluteSize			
+                startDrag = Vector2.new(mouse.X, mouse.Y)
+                dragger.BackgroundTransparency = 1
+                dragger.Size = UDim2.fromOffset(gui.AbsoluteSize.X, gui.AbsoluteSize.Y)
+                dragger.Position = UDim2.new(0,0,0,0)
+                duic.Parent = nil
+                dragger.Parent = gui
+            end
+        end)	
+        dragger.MouseMoved:Connect(function()
+            if startDrag then		
+                local m = Vector2.new(mouse.X, mouse.Y)
+                local mouseMoved = Vector2.new(m.X - startDrag.X, m.Y - startDrag.Y)
+                
+                local s = startSize + mouseMoved
+                local sx = math.max(minSize.X, s.X) 
+                local sy = math.max(minSize.Y, s.Y)
+                
+                obj.Size = UDim2.fromOffset(sx, sy)
+                
+            end
+        end)
+        dragger.MouseEnter:Connect(function()
+            finishResize(DRAGGER_TRANSPARENCY)				
+        end)
+        dragger.MouseLeave:Connect(function()
+            finishResize(1)
+        end)		
+        dragger.MouseButton1Up:Connect(function()
+            finishResize(DRAGGER_TRANSPARENCY)
+        end)	
+    end
+
+    function draggerFunctions.makeDraggable(obj)
+        local dragInput, dragStart
+        local startPos = obj.Position 
+        local dragger = obj	
+        local function updateInput(input)		
+            local offset = input.Position - dragStart
+            local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + offset.X, startPos.Y.Scale, startPos.Y.Offset + offset.Y)
+            game:GetService("TweenService"):Create(obj, TweenInfo.new(0.25), {Position = Position}):Play()
+        end
+        dragger.InputBegan:Connect(function(input)
+            if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and not uis:GetFocusedTextBox() then
+                dragging = true
+                dragStart = input.Position
+                startPos = obj.Position
+                -- module.dragged = obj
+                input.Changed:Connect(function()
+                    if input.UserInputState == Enum.UserInputState.End then
+                        dragging = false
+                    end
+                end)
+            end
+        end)
+        dragger.InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                dragInput = input
+            end
+        end)
+        uis.InputChanged:Connect(function(input)
+            if input == dragInput and dragging then
+                updateInput(input)
+            end
+        end)
+    end
+end    
+
+--animazioni e minimizzazione
+do 
+    local background = Background
+    local outputFrame = Output
+    local minimizeButton = Toggle
+    local closeButton = Close
+    local clearButton = ClearButton
+
+    draggerFunctions.makeResizable(background)
+    draggerFunctions.makeDraggable(background)
+
+    local resizer = background.resizer.dragger
+
+    function scrollToBottom()
+        outputFrame.CanvasPosition = Vector2.new(0, 9e9)
+    end
+
+
+    function fadeOut(instance, duration)
+        tweenService:Create(
+            instance, 
+            TweenInfo.new(duration, Enum.EasingStyle.Quint), 
+            {BackgroundTransparency = 1}
+        ):Play()
+    end
+
+    function fadeIn(instance, duration)
+        tweenService:Create(
+            instance, 
+            TweenInfo.new(duration, Enum.EasingStyle.Quint), 
+            {BackgroundTransparency = 0}
+        ):Play()
+    end
+
+    clearButton.Activated:Connect(function()
+        cleartext()	
+    end)
+
+    local closed = false
+    local oldSize
+
+    minimizeButton.Activated:Connect(function()
+        if closed == false then 
+            fadeOut(outputFrame, 0.6)
+            fadeOut(clearButton, 0.6)
+
+            resizer.BackgroundTransparency = 1
+            resizer.Visible = false
+
+            tweenService:Create(
+                minimizeButton,
+                TweenInfo.new(1, Enum.EasingStyle.Quint),
+                {Rotation = -180}
+            ):Play()
+
+            local size = background.Size
+            oldSize = size
+
+            background:TweenSize(
+                UDim2.new(size.X.Scale, size.X.Offset, size.Y.Scale, 25), 
+                Enum.EasingDirection.Out, 
+                Enum.EasingStyle.Quint, 
+                1,
+                true
+            )
+            
+            closed = true
+        else 
+            fadeIn(outputFrame, 0.6)
+            fadeIn(clearButton, 0.6)
+
+            resizer.Visible = true
+
+            tweenService:Create(
+                minimizeButton,
+                TweenInfo.new(1, Enum.EasingStyle.Quint),
+                {Rotation = 0}
+            ):Play()
+
+            background:TweenSize(
+                oldSize, 
+                Enum.EasingDirection.Out, 
+                Enum.EasingStyle.Quint, 
+                1,
+                true
+            )
+            
+            closed = false
+        end
+    end)
+
+    closeButton.Activated:Connect(function()
+        shutdown()
+    end)
+end
+
+
+local queue = {}
+local loopEnabled = true
+
+task.spawn(function()
+    while loopEnabled do
+        task.wait()
+
+        if queue[1] == nil then
+            continue
+        end
+        
+        local item = queue[1]
+        logtext(item.text, item.textType)
+
+        table.remove(queue, 1)
+    end
+end)
+
+
+function safetostring(arg)
+    local mt = getrawmetatable(arg)
+    local res
+
+    if mt then
+        local oldfunc = mt.__tostring 
+        mt.__tostring = nil
+        
+        res = tostring(arg)
+        mt.__tostring = oldfunc
+    else
+        res = tostring(arg)
+    end
+
+    return res
+end
+
+
+local oldprint
+oldprint = hookfunction(print, function(...)
+    if config.enabled == false then
+        return oldprint(...)
+    end
+    if config.onlyExecutorOutput and checkcaller() == false then
+        return oldprint(...)
+    end
+
+    local args = {...}
+    for i,v in pairs(args) do
+        args[i] = safetostring(v)
+    end
+
+    local output = table.concat(args, " ")
+    table.insert(queue, {
+        text = output,
+        textType = "print"
+    })
+end)
+
+local oldwarn 
+oldwarn = hookfunction(warn, function(...)
+    if config.enabled == false then
+        return oldwarn(...)
+    end
+    if config.onlyExecutorOutput and checkcaller() == false then
+        return oldwarn(...)
+    end
+
+    local args = {...}
+    for i,v in pairs(args) do
+        args[i] = safetostring(v)
+    end
+
+    local output = table.concat(args, " ")
+    table.insert(queue, {
+        text = output,
+        textType = "warn"
+    })
+end)
+
+local olderr
+olderr = hookfunction(error, function(...)
+    if config.enabled == false then
+        return olderr(...)
+    end
+    if config.onlyExecutorOutput and checkcaller() == false then
+        return olderr(...)
+    end
+
+    local args = {...}
+    for i,v in pairs(args) do
+        args[i] = safetostring(v)
+    end
+
+    local output = table.concat(args, " ")
+    table.insert(queue, {
+        text = output,
+        textType = "error"
+    })
+end)
+
+
+local messageoutCon 
+messageoutCon = game:GetService("LogService").MessageOut:Connect(function(message, messageType)
+    if messageType == Enum.MessageType.MessageError then
+        if config.enabled == false then
+            return
+        end
+
+        local execMessage = (message:lower():find(execName, 1) ~= nil)
+        if execMessage == false and config.onlyExecutorOutput then
+            return
+        end
+
+        logtext(message, "error")
+    end
+end)
+
+getgenv().shutdown = function()
+    messageoutCon:Disconnect()
+    loopEnabled = false
+
+    hookfunction(print, oldprint)
+    hookfunction(warn, oldwarn)
+    hookfunction(error, olderr)
+
+    Options:Destroy()
+    Background:Destroy()
+end
