@@ -527,7 +527,7 @@ btn13.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Winnablez/Winnable/main/Loader")){}
 end)
 
---Mystery Clickers
+--Swarm Simulator
 btn14.Name = "btn14"
 btn14.Parent = Output
 btn14.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -536,7 +536,7 @@ btn14.BackgroundTransparency = 0
 btn14.BorderSizePixel = 1
 btn14.Size = UDim2.new(0, 100, 0, 40)
 btn14.Position = UDim2.new(0, 220, 0, 162)
-btn14.Text = "Mystery Clickers"
+btn14.Text = "Swarm Simulator"
 btn14.TextColor3 = Color3.new(255, 255, 255)
 btn14.TextScaled = true
 btn14.TextSize = 25
@@ -545,7 +545,7 @@ btn14.TextWrapped = true
 btn14.TextStrokeTransparency = 1
 btn14.Font = Enum.Font.SourceSans
 btn14.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/memejames/Hide/main/auto%20get%20100k%20pet"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub/main/hub"))()
 end)
 
 --One Fruit
