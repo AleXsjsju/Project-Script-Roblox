@@ -39,6 +39,7 @@ local textwelcomeplayer = Instance.new("TextLabel")
 local mettichiave = Instance.new("TextBox")
 local istruzionichiave = Instance.new("TextLabel")
 local btnsubmit = Instance.new("TextButton")
+local infogetkey = Instance.new("TextLabel")
 
 do
 
@@ -120,6 +121,19 @@ textwelcomeplayer.Text = "Welcome"
 textwelcomeplayer.TextColor3 = Color3.fromRGB(255, 255, 255)
 textwelcomeplayer.TextSize = 30
 textwelcomeplayer.Position = UDim2.new(0, 202, 0, 240)
+
+infogetkey.Name = "infogetkey"
+infogetkey.Parent = Output
+infogetkey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+infogetkey.BackgroundTransparency = 1.000
+infogetkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+infogetkey.BorderSizePixel = 0
+infogetkey.Size = UDim2.new(1, 0, 0, 1)
+infogetkey.Font = Enum.Font.ArialBold
+infogetkey.Text = "Key: https://direct-link.net/485078/key3"
+infogetkey.TextColor3 = Color3.fromRGB(255, 255, 255)
+infogetkey.TextSize = 15
+infogetkey.Position = UDim2.new(0, 0, 0, 170)
 
 TabPadding.Name = "TabPadding"
 TabPadding.Parent = TabLabel
