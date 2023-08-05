@@ -371,7 +371,7 @@ btn5.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Domadicoof/Domadicoof/main/Domadichub/NottoGay/Start.ranscript"))()
 end)
 
---Cheese Factory Tycoon
+--Ninja Legends
 btn6.Name = "btn6"
 btn6.Parent = Output
 btn6.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -380,7 +380,7 @@ btn6.BackgroundTransparency = 0
 btn6.BorderSizePixel = 1
 btn6.Size = UDim2.new(0, 100, 0, 40)
 btn6.Position = UDim2.new(0, 110, 0, 55)
-btn6.Text = "Cheese Factory Tycoon"
+btn6.Text = "Ninja Legends"
 btn6.TextColor3 = Color3.new(255, 255, 255)
 btn6.TextScaled = true
 btn6.TextSize = 25
@@ -389,7 +389,7 @@ btn6.TextWrapped = true
 btn6.TextStrokeTransparency = 1
 btn6.Font = Enum.Font.SourceSans
 btn6.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/RaCc0oN1/RobloxObf/main/MainHub'))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/arlists/Sky-Hub/main/Main", true))()
 end)
 
 --Taxi Boss
