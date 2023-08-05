@@ -1,12 +1,3 @@
---NOTE 
---Informazioni:
---Background (49/55): e lo sfondo
---TopBar (58/64): e la striscia che rimane quando minimizzi il pannello
---Separator (67/73): e la piccola striscietta rossa che divide il topbar e il background
---toggle (76/84): bottone che una volta cliccato minimizza il pannello
---TabLabel (90/101): si trova in topbar ed è il titolo "by AleXsjsju etc" (il "visit my channel" si trova in un label apparte)
---OutPut (118/128): e la parte di colore diverso che sta dentro Backgound e al suo interno ci sono i tasti
---OutPutTamplate/dragger e resizer (137/154): Servono all'allineamento del contenuto di OutPut (ho provato a modificarlo e toglierlo ma facendo ciò sballo il moveframe e sballo anche la chiusura del pannello e il destroy del pannello)
 
 --inizio
 repeat task.wait() until game.Players and game.Players.LocalPlayer
@@ -380,7 +371,7 @@ btn5.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Domadicoof/Domadicoof/main/Domadichub/NottoGay/Start.ranscript"))()
 end)
 
---Total Drama
+--Cheese Factory Tycoon
 btn6.Name = "btn6"
 btn6.Parent = Output
 btn6.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -389,7 +380,7 @@ btn6.BackgroundTransparency = 0
 btn6.BorderSizePixel = 1
 btn6.Size = UDim2.new(0, 100, 0, 40)
 btn6.Position = UDim2.new(0, 110, 0, 55)
-btn6.Text = "Total Drama"
+btn6.Text = "Cheese Factory Tycoon"
 btn6.TextColor3 = Color3.new(255, 255, 255)
 btn6.TextScaled = true
 btn6.TextSize = 25
@@ -398,7 +389,7 @@ btn6.TextWrapped = true
 btn6.TextStrokeTransparency = 1
 btn6.Font = Enum.Font.SourceSans
 btn6.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet("https://gist.githubusercontent.com/HighButton/694e6d2195d03dceb9ba1039ee8e3e87/raw/"))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/RaCc0oN1/RobloxObf/main/MainHub'))()
 end)
 
 --Taxi Boss
