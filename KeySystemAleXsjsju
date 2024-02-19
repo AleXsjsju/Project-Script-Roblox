@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://gist.githubusercontent.com/AleXsjsju/f1fca451fbd0650441a7edcde9cc7491/raw/8d16655d7500fa6be7e439b00635afa7b289bcc0/KeySystem"))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/AleXsjsju/f1fca451fbd0650441a7edcde9cc7491/raw/033a4f5ed327d8345349a64393c19c731c018288/KeySystem"))()
